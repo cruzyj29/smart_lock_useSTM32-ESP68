@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"vd\startup_stm32f103xb.o"
+"vd\main.o"
+"vd\stm32f1xx_it.o"
+"vd\stm32f1xx_hal_msp.o"
+"vd\stm32f1xx_hal_gpio_ex.o"
+"vd\stm32f1xx_hal_adc.o"
+"vd\stm32f1xx_hal_adc_ex.o"
+"vd\stm32f1xx_hal.o"
+"vd\stm32f1xx_hal_rcc.o"
+"vd\stm32f1xx_hal_rcc_ex.o"
+"vd\stm32f1xx_hal_gpio.o"
+"vd\stm32f1xx_hal_dma.o"
+"vd\stm32f1xx_hal_cortex.o"
+"vd\stm32f1xx_hal_pwr.o"
+"vd\stm32f1xx_hal_flash.o"
+"vd\stm32f1xx_hal_flash_ex.o"
+"vd\stm32f1xx_hal_exti.o"
+"vd\stm32f1xx_hal_tim.o"
+"vd\stm32f1xx_hal_tim_ex.o"
+"vd\system_stm32f1xx.o"
+--strict --scatter "vd\vd.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "vd.map" -o vd\vd.axf

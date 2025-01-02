@@ -1,0 +1,189 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: cru 1, my company, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\LAP_TRINH\DoAn\1\Do an chuyen nghanh\code\do an dan phoi quan ao tu dong\Mo phong\bai1\MDK-ARM\bai1.uvprojx
+Project File Date:  06/25/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'bai1'
+compiling stm32f1xx_hal_msp.c...
+compiling stm32f1xx_it.c...
+assembling startup_stm32f103xb.s...
+compiling stm32f1xx_hal_gpio_ex.c...
+../Core/Src/i2c-lcd.c(6): error: unknown type name 'I2C_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+extern I2C_HandleTypeDef hi2c1;  // change your handler here accordingly
+       ^~~~~~~~~~~~~~~~~
+       ADC_HandleTypeDef
+../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_adc.h(199): note: 'ADC_HandleTypeDef' declared here
+}ADC_HandleTypeDef;
+ ^
+../Core/Src/i2c-lcd.c(20): error: call to undeclared function 'HAL_I2C_Master_Transmit'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+        HAL_I2C_Master_Transmit (&hi2c1, SLAVE_ADDRESS_LCD,(uint8_t *) data_t, 4, 100);
+        ^
+../Core/Src/i2c-lcd.c(33): error: call to undeclared function 'HAL_I2C_Master_Transmit'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+        HAL_I2C_Master_Transmit (&hi2c1, SLAVE_ADDRESS_LCD,(uint8_t *) data_t, 4, 100);
+        ^
+3 errors generated.
+compiling i2c-lcd.c...
+../Core/Src/main.c(28): warning: In file included from...
+../Core/Inc\CLCD_I2C.h(59): error: unknown type name 'I2C_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+        I2C_HandleTypeDef* I2C;
+        ^~~~~~~~~~~~~~~~~
+        ADC_HandleTypeDef
+../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_adc.h(199): note: 'ADC_HandleTypeDef' declared here
+}ADC_HandleTypeDef;
+ ^
+../Core/Src/main.c(28): warning: In file included from...
+../Core/Inc\CLCD_I2C.h(69): error: unknown type name 'I2C_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+void CLCD_I2C_Init(CLCD_I2C_Name* LCD, I2C_HandleTypeDef* hi2c_CLCD, uint8_t Address, uint8_t Colums, uint8_t Rows);
+                                       ^~~~~~~~~~~~~~~~~
+                                       ADC_HandleTypeDef
+../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_adc.h(199): note: 'ADC_HandleTypeDef' declared here
+}ADC_HandleTypeDef;
+ ^
+../Core/Src/main.c(166): error: call to undeclared function 'Lcd_Ghi_Lenh'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+                 Lcd_Ghi_Lenh(0x80);
+                 ^
+../Core/Src/main.c(167): error: use of undeclared identifier 'M'
+                 sprintf(&M[0],"che do:tu dong                                                                                                                                                                                                                                                                                                                                                                                           ");
+                          ^
+../Core/Src/main.c(168): error: call to undeclared function 'Lcd_Ghi_chuoi'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     Lcd_Ghi_chuoi(&M[0]);
+     ^
+../Core/Src/main.c(168): error: use of undeclared identifier 'M'
+     Lcd_Ghi_chuoi(&M[0]);
+                    ^
+../Core/Src/main.c(175): error: use of undeclared identifier 'M'
+                        sprintf(&M[0],"dong:ngay co mua         ");
+                                 ^
+../Core/Src/main.c(178): error: use of undeclared identifier 'M'
+            Lcd_Ghi_chuoi(&M[0]);
+                           ^
+../Core/Src/main.c(201): error: use of undeclared identifier 'M'
+                                                                                         sprintf(&M[0],"mo:ngay khum mua       ");
+                                                                                                  ^
+../Core/Src/main.c(202): error: use of undeclared identifier 'M'
+                                                                                         Lcd_Ghi_chuoi(&M[0]);
+                                                                                                        ^
+../Core/Src/main.c(230): error: use of undeclared identifier 'M'
+                          sprintf(&M[0],"dong: Toi                  ");
+                                   ^
+../Core/Src/main.c(231): error: use of undeclared identifier 'M'
+              Lcd_Ghi_chuoi(&M[0]);
+                             ^
+../Core/Src/main.c(259): error: call to undeclared function 'Lcd_Ghi_Lenh'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+          Lcd_Ghi_Lenh(0x80);
+          ^
+../Core/Src/main.c(260): error: use of undeclared identifier 'M'
+                      sprintf(&M[0],"che do:thu cong      ");
+                               ^
+../Core/Src/main.c(261): error: call to undeclared function 'Lcd_Ghi_chuoi'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+          Lcd_Ghi_chuoi(&M[0]); 
+          ^
+../Core/Src/main.c(261): error: use of undeclared identifier 'M'
+          Lcd_Ghi_chuoi(&M[0]); 
+                         ^
+../Core/Src/main.c(266): error: use of undeclared identifier 'M'
+                      sprintf(&M[0],"mo                    ");
+                               ^
+../Core/Src/main.c(267): error: use of undeclared identifier 'M'
+          Lcd_Ghi_chuoi(&M[0]);
+                         ^
+../Core/Src/main.c(273): error: use of undeclared identifier 'M'
+                                                                                sprintf(&M[0],"dong                  ");
+                                                                                         ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+compiling main.c...
+../Core/Src/CLCD_I2C.c(14): warning: In file included from...
+../Core/Inc\CLCD_I2C.h(59): error: unknown type name 'I2C_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+        I2C_HandleTypeDef* I2C;
+        ^~~~~~~~~~~~~~~~~
+        ADC_HandleTypeDef
+../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_adc.h(199): note: 'ADC_HandleTypeDef' declared here
+}ADC_HandleTypeDef;
+ ^
+../Core/Src/CLCD_I2C.c(14): warning: In file included from...
+../Core/Inc\CLCD_I2C.h(69): error: unknown type name 'I2C_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+void CLCD_I2C_Init(CLCD_I2C_Name* LCD, I2C_HandleTypeDef* hi2c_CLCD, uint8_t Address, uint8_t Colums, uint8_t Rows);
+                                       ^~~~~~~~~~~~~~~~~
+                                       ADC_HandleTypeDef
+../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_adc.h(199): note: 'ADC_HandleTypeDef' declared here
+}ADC_HandleTypeDef;
+ ^
+../Core/Src/CLCD_I2C.c(49): error: call to undeclared function 'HAL_I2C_Master_Transmit'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+        HAL_I2C_Master_Transmit(LCD->I2C, LCD->ADDRESS, (uint8_t *)Data_I2C, sizeof(Data_I2C), 1000);
+        ^
+../Core/Src/CLCD_I2C.c(54): error: unknown type name 'I2C_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+void CLCD_I2C_Init(CLCD_I2C_Name* LCD, I2C_HandleTypeDef* hi2c_CLCD, uint8_t Address, uint8_t Colums, uint8_t Rows)
+                                       ^~~~~~~~~~~~~~~~~
+                                       ADC_HandleTypeDef
+../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_adc.h(199): note: 'ADC_HandleTypeDef' declared here
+}ADC_HandleTypeDef;
+ ^
+4 errors generated.
+compiling CLCD_I2C.c...
+compiling stm32f1xx_hal.c...
+compiling stm32f1xx_hal_rcc_ex.c...
+compiling stm32f1xx_hal_rcc.c...
+compiling stm32f1xx_hal_adc_ex.c...
+compiling stm32f1xx_hal_adc.c...
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_cortex.c...
+compiling stm32f1xx_hal_exti.c...
+compiling stm32f1xx_hal_dma.c...
+compiling stm32f1xx_hal_flash.c...
+compiling stm32f1xx_hal_flash_ex.c...
+compiling stm32f1xx_hal_tim.c...
+compiling stm32f1xx_hal_tim_ex.c...
+compiling system_stm32f1xx.c...
+"bai1\bai1.axf" - 26 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
+                ARM.CMSIS.6.1.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.1.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.0.pack
+                Keil.STM32F1xx_DFP.2.4.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_bai1
+  C:/Users/Minh_Tuan/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+  C:/Users/Minh_Tuan/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:6.1.0
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
